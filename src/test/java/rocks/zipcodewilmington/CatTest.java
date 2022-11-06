@@ -7,7 +7,7 @@ import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
-import java.util.Optional;
+
 
 /**
  * @author leon on 4/19/18.
@@ -66,9 +66,10 @@ public class CatTest {
     }
     @Test
     public void testSetBirthDate(){
+        Date firstDate = new Date();
+        Cat cat = new Cat("", firstDate, 0);
         Date expectedDate = new Date();
-        Cat cat = new Cat("", expectedDate, 0);
-        cat.setBirthDate(new Date());
+        cat.setBirthDate(expectedDate);
         Assert.assertEquals(expectedDate,cat.getBirthDate());
     }
     @Test
