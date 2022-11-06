@@ -57,5 +57,19 @@ public class CatHouseTest {
         CatHouse.add(testCat);
         CatHouse.remove(testCat);
         Integer actualCats = CatHouse.getNumberOfCats();
+        Assert.assertEquals(expectedCats, actualCats);
+    }
+    @Test
+    public void testGetNumberOfCats(){
+        //given
+        Integer expectedCats = 1;
+        CatHouse.clear(); // 0 cats
+        Cat testCat = new Cat(null, null, null);
+        //when
+        CatHouse.add(testCat); // 1 cat
+        //then
+        Integer actualCats = CatHouse.getNumberOfCats(); // should return 1 
+        Assert.assertEquals(actualCats, expectedCats);
+
     }
 }
